@@ -1,0 +1,82 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+	<br>
+	<br>
+	<br>
+	<form action="/fetch" method="GET">
+	<table style="width=200%;">
+		<tr>
+			<th><p style="font-size:20px ;padding-right: 35px;">Item Number : {{ con.item_no }}</p></th>
+			<th><p style="font-size:20px ;padding-right: 35px;">Item Qty : {{ con.item_qty }}    </p></th>
+			<th><p style="font-size:20px ;padding-right: 35px;">Item Price : {{ con.item_price }}    </p></th>
+		</tr>
+	</table>
+	<input type="hidden" name="a" value="{{ con.item_no }}"/>
+	<input type="hidden" name="b" value="{{ con.item_qty }}"/>
+	<input type="hidden" name="c" value="{{ con.item_price }}"/>
+	<br/>
+	<br/>
+	<table>
+		<tr>
+	
+	<th>
+		<div class="form-inline">
+			<div class="col-md-12 form-group">
+				<div class="form-group">
+					<label for="rq"><b>Return Qty:   </b></label>
+					<input name="ret_qty" type="number" class="form-control" min="1" max="30">
+				</div>
+			</div>
+		</div>
+	</th>
+	<th>
+		<div class="form-inline">
+			<div class="col-md-12 form-group">
+				<div class="form-group">
+					<label for="q"><b>Receive Qty:   </b></label>
+					<input name="rcv_qty" type="number" class="form-control" min="1" max="30">
+				</div>
+			</div>
+		</div>
+	</th>
+	</tr>	
+	</table>	
+	<br>
+	<centre>	
+	<h1><b>Please select a reason for return </b></h1>
+	</centre>
+	<br>	
+	<div class="text-center">
+    <h3><b>Cause of return</b></h3>
+    <select name="d" STYLE="font-size:16pt">
+        <option value="Technical Rejection"  >Technical Rejection</option>
+        <option value="Wrong Supply" >Wrong Supply</option>
+        <option value="Excess Supply" >Excess Supply</option>
+        <option value="Damaged Materials" >Damaged Materials</option>
+        <option value="Goods Lying" >Goods Lying</option>
+    </select>
+	<br/><br/>
+	</div>
+
+	<div class="form-group">
+		<label for="comment"><b>Add Notes:</b></label>
+		<textarea name="cmmnt" class="form-control" rows="5"> </textarea>
+	</div>
+	<br>
+	<br>
+	<div class="text-center">
+    <h3><b>GRN Done?(Yes/No)</b></h3>
+    <select name="e" STYLE="font-size:16pt">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    </div>
+	
+	<h2>Upload Product Images</h2>
+	<!---<a href="{% url 'upload' %}" class="btn btn-info" role="button">Select Images</a>--->
+	<button type="submit" class="btn btn-info">Select Images</button>
+	</form>
+	<br><br>	
+	
+{% endblock %}

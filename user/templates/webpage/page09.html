@@ -1,0 +1,74 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<br><br>
+	<table class="table table-dark table-striped">
+		<tr>
+		<th><p style="padding-right:15px">Complain Number:</p></th>
+		<th><p style="padding-right:15px">User Id:</p></th>
+		<th><p style="padding-right:15px">Invoice No:</p></th>
+		<th><p style="padding-right:15px">Item No:</p></th>
+		<th><p style="padding-right:15px">Item Qty:</p></th>
+		<th><p style="padding-right:15px">Reason:</p></th>
+		</tr>
+		<tr>
+			<td>{{ var5.complain_no }}</td>
+			<td>{{ var5.uid_id }}</td>
+			<td>{{ var5.invoice_no_id }}</td>
+			<td>{{ var5.item_no_id }}</td>
+			<td>{{ var5.item_qty }}</td>
+			<td>{{ var5.reason }}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="form-group">
+      <label for="comment"><b>Comment:</b></label>
+      <textarea class="form-control" rows="4" cols="10" id="comment">{{ var5.freetext }}</textarea>
+    </div>
+	<br>
+	<br>
+	<h3><b>Product Images</b></h3>
+	<table>
+		{% for i in var6 %}
+		<tr>
+			<td style="padding-right:15px"><a href="{{ i.f_path }}">{{ i.f_path }}</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br>
+
+	<form action="/accept" method="post">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td><p>Error Report Number</p></td>
+				
+			</tr>
+			<tr>
+				<td><input name="ser" type="text" class="form-control " placeholder="Enter Error Report Number"></td>
+
+			</tr>
+		</table>
+		
+		<br>
+		
+		<input type="submit" value="Approve" class="btn btn-success">
+	</form>
+	<br>
+		<a href="{% url 'decline' %}" button type="submit" class="btn btn-warning">Disapprove</a>
+	<br><br>
+	<h3><b>User Uploaded Documents</b></h3>
+	<table>
+		{% for i in var7 %}
+		<tr>
+			<td style="padding-right:15px"><a href="{{ i.in_path }}">{{ i.in_path }}</a></td>
+			<td style="padding-right:15px"><a href="{{ i.eawaybill_path }}">{{ i.eawaybill_path }}</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br>
+	<br>
+{% endblock %}

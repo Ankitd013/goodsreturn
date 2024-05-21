@@ -1,0 +1,32 @@
+{% extends 'basic.html' %}
+{% block content %}
+	<br>
+	<h2>Image Upload</h2>
+	<h3>First upload return invoice then eawaybill</h3>
+	<br>
+		<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="file" name="document">
+		<button type="submit" class="btn btn-info">Upload File</button>
+
+	</form>
+	<br>
+	<h3>Please Click Store To Database</h3>
+	<br>
+	{% if url %}
+		<p> Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
+		<form action="/tuss" method="GET">
+			<input type="hidden" name="add" value="{{ url }}"/>
+			<button class="btn btn-info">Store</button>
+		</form>
+	{% endif %}
+	<br>
+	<h3 align="center">Click proceed if you are done uploading image</h3>
+	<div align="right">
+		<a href="{% url 'muss' %}" class="btn btn-info" role="button">Proceed</a>
+	</div>	
+	<br>
+	<br>	
+
+
+{% endblock %}

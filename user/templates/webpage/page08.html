@@ -1,0 +1,50 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+	<div class="container" style="background-color: #eeefff;">
+		<div align="center">
+			<h1 style="color: green;">SKF INDIA CUSTOMER SERVICE</h1>
+		</div>
+		<div align="right">
+			<a href="#" button type="submit" class="btn btn-warning">REFRESH</button> </a>
+		</div>
+		<br/>
+		<br/>
+		<h2 style="color: blue;"><b>PENDING REQUEST</b></h2>
+		<table class="table table-striped">
+			<tr>
+				<th><p style="padding-right:15px">Complain Number:</p></th>
+				<th><p style="padding-right:15px">User Id:</p></th>
+				<th><p style="padding-right:15px">Invoice No:</p></th>
+				<th><p style="padding-right:15px">Item No:</p></th>
+				<th><p style="padding-right:15px">Item Qty:</p></th>
+				<th><p style="padding-right:15px">Reason:</p></th>
+				<th><p style="padding-right:15px">Button</p></th>
+			</tr>
+				{% for i in var3 %}
+				<tr>
+						<td>{{ i.complain_no }}</td>						
+						<td>{{ i.uid_id }}</td>
+						<td>{{ i.invoice_no_id }}</td>
+						<td>{{ i.item_no_id }}</td>
+						<td>{{ i.item_qty }}</td>
+						<td>{{ i.reason }}</td>
+						<form action="/found" method="GET">
+							<input type="hidden" name="complain_no" value="{{ i.complain_no }}"/>
+							<input type="hidden" name="csr_no" value="{{ i.csr_no }}"/>
+							<input type="hidden" name="uid_id" value="{{ i.uid_id }}"/>
+							<input type="hidden" name="invoice_no_id" value="{{ i.invoice_no_id }}"/>
+							<input type="hidden" name="item_no_id" value="{{ i.item_no_id }}"/> 
+							<input type="hidden" name="item_qty" value="{{ i.item_qty }}"/> 
+							<input type="hidden" name="reason" value="{{ i.reason }}"/>	
+							<input type="hidden" name="freetext" value="{{ i.notes }}"/>					
+						<td><button class="btn btn-info">View Details</button></td>
+						</form>
+				</tr>	
+				{% endfor %}
+		</table>	
+	<br/>
+	<br/>
+	</div>
+	
+{% endblock %}

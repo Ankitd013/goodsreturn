@@ -1,0 +1,11 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<h1>We have successfully uploaded every document. please wait patiently</h1>
+
+<br><br><br>
+<div align="right">
+	<a href="{% url 'sendback' %}" class="btn btn-info" role="button">Continue</a>
+</div>
+<br>
+{% endblock %}

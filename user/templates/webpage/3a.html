@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="utf-8">
+ 
+  <!-- Viewport Meta Tag -->
+ <!-- To ensure proper rendering and touch zooming on mobile devices, 
+   add the viewport <meta> tag  
+ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Return Feedback</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap4.0/css/bootstrap.min.css">
+
+
+</head>
+<body>
+<div class="container" style="background-color: #eeefff;">
+	<div align="center">
+		<h1 style="color: green;">E-MARKETING</h1>
+	</div>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<!-- Brand/logo -->
+		<a class="navbar-brand" href="#">
+			<img src="images/logo.jpg" alt="logo" style="width:100px;">
+		</a>
+  
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">HOME</a>
+			</li>
+	
+			<li class="nav-item">
+				<a class="nav-link" href="#">ABOUT</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">CONTACT</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">FAQ</a>
+			</li>
+		</ul>
+	</nav>
+	<p>Return Feedback ?</p>
+	<div class="container">
+		<button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal">Yes</button>
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title"><b>Yes you can return it</b></h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p><b>Why you want to return it ?</b></p>
+						<textarea rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+						<button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+						<div class="container">
+			
+			
+							<!-- The Modal -->
+			
+	
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<button type="button" class="btn btn-warning"  data-toggle="modal" data-target="#myModal2">No</button>
+		<div class="modal fade" id="myModal2">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+			
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p><b>Cause ?</b></p>
+						<textarea rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+						<button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+						<div class="container">
+		
+			
+							<!-- The Modal -->
+			
+	
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<h4 class="modal-title"><b>Upload 4 Photos</b></h4>
+	<div class="input-default-wrapper mt-5">
+
+		<span class="input-group-text mb-3" id="input2">Upload</span>
+
+		<input type="file" id="file-with-multi-file" class="input-default-js" data-multiple-target="{target} files selected" multiple>
+
+		<label class="label-for-default-js rounded-right mb-3" for="file-with-multi-file"><span class="span-choose-file">Choose
+      file</span>
+
+			<div class="float-right span-browse">Browse</div>
+
+		</label>
+
+	</div>
+ </div>
+ <script src="jquery/1.11.3/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="bootstrap4.0/js/bootstrap.min.js"></script>
+</body>
+</html>

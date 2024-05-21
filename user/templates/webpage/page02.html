@@ -1,0 +1,37 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+    <div align="right">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
+    </div>
+        <h2 align="center">Please Enter Your Invoice Number To Proceed Further</h2>
+    <br/>       
+        <form method="post" class="form-inline" action="/search" >
+            {% csrf_token %}
+            <table align="center">
+                <tbody>
+                    <tr>
+                        <td><b><label>Enter Invoice Number</label></b></td>                       
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <div class="form-group" class="col-xs-2">
+                               <input name="search_oid" type="text" class="form-control" placeholder="Invoice Id">
+                            </div>                        
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="search" class="btn btn-primary">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+   <br><br><br>
+{% endblock %}

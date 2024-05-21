@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<h1>Employee Landing Page {{ empid }}<h1><br>
+<a href="{% url 'requestlist' %}" class="btn btn-info" role="button">Request List</a>
+<a href="{% url 'extract1' %}" button type="submit" class="btn btn-primary">Invoice Table</a>
+<a href="{% url 'extract2' %}" button type="submit" class="btn btn-primary">Item-Invoice Table</a>
+
+<h2>Enter Complain no id to genereate invoice</h2>
+<form method="post" class="form-inline" action="/godspeed" >
+ {% csrf_token %}
+	<input name="bicchu" type="text" class="form-control" placeholder="Complain Number">
+	<button type="submit" class="btn btn-info">Generate PDF</button>
+</form>
+<h3>Send Mail to both customer and transporters</h3>
+<a href="{% url 'moment' %}" button type="submit" class="btn btn-primary">Send Mail</a>
+
+<h1>Track return shipment</h1>
+<a class="nav-link" href="{% url 'index' %}">Track Return Shipment</a>
+{% endblock %}

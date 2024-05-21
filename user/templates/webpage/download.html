@@ -1,0 +1,8 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+	{% for i in x %}
+		<p>Uploaded file: <a href="{{ i.f_path }}">{{ i.f_path }}</a><p>
+	{% endfor %}
+{% endblock %}

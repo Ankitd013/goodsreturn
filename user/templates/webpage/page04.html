@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+	<br>
+	<a href="{% url 'sendback' %}" button type="submit" class="btn btn-info">Search Invoice</a><br>
+	<br>
+	<table class="table table-dark table-striped">
+	<thread>
+	<tr>
+		<th>Complain Number</th>
+		<th>Invoice Number</th>
+		<th>Invoice Item No</th>
+		<th>Complain Status</th>
+		<th></th>	
+	</tr>
+	</thread>
+
+	{% for i in g %}
+	<tr>
+		<td>{{ i.complain_no }}</td>
+		<td>{{ i.invoice_no_id }}</td>
+		<td>{{ i.item_no_id }}</td>
+		<td>{{ i.status }}</td>
+		<form action="/bhuss" method="GET">
+			<input type="hidden" name="complainnum" value="{{ i.complain_no }}"/>
+		
+		{% ifequal i.status 'open' %}
+		<td><a href="{% url 'uploadc' %}" button type="submit" class="btn btn-warning">View</a></td>
+		{% endifequal %}
+		</form>
+	</tr>
+	{% endfor %}
+	</table>
+
+{% endblock %}
